@@ -6,11 +6,11 @@
 ### 프로젝트 폴더 구조
 
     ProjectDirectory
-
         - AppDelegate
+            - Supporting Files
+                - Prefix.pch
         - Common
-            - Extentions
-            - Protocols
+            - Categorys
             - Supers
         - Modules
         - Resource
@@ -21,9 +21,7 @@
             - Root
 
     ProjectTestsDirectory
-
     Thirdpartys
-
         - Frameworks
         - Librarys
         - Opensources

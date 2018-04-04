@@ -44,7 +44,7 @@
 		1D319D1E2074A83D00F6F806 /* template-project-structure-objcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "template-project-structure-objcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D319D222074A83D00F6F806 /* template_project_structure_objcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = template_project_structure_objcTests.m; sourceTree = "<group>"; };
 		1D319D242074A83D00F6F806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D319D382074AC8A00F6F806 /* template-project-structure-objc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "template-project-structure-objc-Prefix.pch"; sourceTree = "<group>"; };
+		1D319D382074AC8A00F6F806 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		1D319D402074AD8200F6F806 /* IntroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		1D319D412074AD8200F6F806 /* IntroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 		1D319D432074ADBA00F6F806 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 			children = (
 				1D319D182074A83D00F6F806 /* main.m */,
 				1D319D172074A83D00F6F806 /* Info.plist */,
-				1D319D382074AC8A00F6F806 /* template-project-structure-objc-Prefix.pch */,
+				1D319D382074AC8A00F6F806 /* Prefix.pch */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -636,7 +636,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/template-project-structure-objc/AppDelegate/Supporting Files/template-project-structure-objc-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/template-project-structure-objc/AppDelegate/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/template-project-structure-objc/AppDelegate/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.template-project-structure-objc";
@@ -651,7 +651,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/template-project-structure-objc/AppDelegate/Supporting Files/template-project-structure-objc-Prefix.pch";
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/template-project-structure-objc/AppDelegate/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/template-project-structure-objc/AppDelegate/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.template-project-structure-objc";
