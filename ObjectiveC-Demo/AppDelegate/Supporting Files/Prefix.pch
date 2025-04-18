@@ -1,15 +1,15 @@
 //
-//  template-project-structure-objc-Prefix.pch
-//  template-project-structure-objc
+//  ObjectiveC-Demo-Prefix.pch
+//  ObjectiveC-Demo
 //
 //  Created by INCHAN KANG on 2018. 4. 4..
 //  Copyright © 2018년 INCHAN KANG. All rights reserved.
 //
 
-#ifndef template_project_structure_objc_Prefix_pch
-#define template_project_structure_objc_Prefix_pch
+#ifndef ObjectiveC-Demo_Prefix_pch
+#define ObjectiveC-Demo_Prefix_pch
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#endif /* template_project_structure_objc_Prefix_pch */
+#endif /* ObjectiveC-Demo_Prefix_pch */

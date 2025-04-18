@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:template-project-structure-objc.xcodeproj">
+      location = "self:ObjectiveC-Demo.xcodeproj">
    </FileRef>
 </Workspace>

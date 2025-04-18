@@ -1,6 +1,6 @@
 //
-//  template_project_structure_objcTests.m
-//  template-project-structure-objcTests
+//  ObjectiveC-Demo.m
+//  ObjectiveC-DemoTests
 //
 //  Created by INCHAN KANG on 2018. 4. 4..
 //  Copyright © 2018년 INCHAN KANG. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface template_project_structure_objcTests : XCTestCase
+@interface ObjectiveC-Demo : XCTestCase
 
 @end
 
-@implementation template_project_structure_objcTests
+@implementation ObjectiveC-Demo
 
 - (void)setUp {
     [super setUp];

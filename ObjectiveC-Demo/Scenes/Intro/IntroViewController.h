@@ -1,6 +1,6 @@
 //
-//  RootViewController.h
-//  template-project-structure-objc
+//  IntroViewController.h
+//  ObjectiveC-Demo
 //
 //  Created by INCHAN KANG on 2018. 4. 4..
 //  Copyright © 2018년 INCHAN KANG. All rights reserved.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController
-
+@interface IntroViewController : UIViewController
 
 @end
-

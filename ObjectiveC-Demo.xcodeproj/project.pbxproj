@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1152F93C69C6140F6C025D5A /* libPods-ObjectiveC-DemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D869E79BDC58AB60F1EE492 /* libPods-ObjectiveC-DemoTests.a */; };
 		1D319D0B2074A83D00F6F806 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D319D0A2074A83D00F6F806 /* AppDelegate.m */; };
 		1D319D0E2074A83D00F6F806 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D319D0D2074A83D00F6F806 /* RootViewController.m */; };
 		1D319D112074A83D00F6F806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D319D0F2074A83D00F6F806 /* Main.storyboard */; };
 		1D319D132074A83D00F6F806 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D319D122074A83D00F6F806 /* Assets.xcassets */; };
 		1D319D162074A83D00F6F806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D319D142074A83D00F6F806 /* LaunchScreen.storyboard */; };
 		1D319D192074A83D00F6F806 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D319D182074A83D00F6F806 /* main.m */; };
-		1D319D232074A83D00F6F806 /* template_project_structure_objcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D319D222074A83D00F6F806 /* template_project_structure_objcTests.m */; };
+		1D319D232074A83D00F6F806 /* ObjectiveC-DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D319D222074A83D00F6F806 /* ObjectiveC-DemoTests.m */; };
 		1D319D422074AD8200F6F806 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D319D412074AD8200F6F806 /* IntroViewController.m */; };
 		1D319D442074ADBB00F6F806 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1D319D432074ADBA00F6F806 /* README.md */; };
-		3A7DA5F777CC2FE0BD8598A4 /* libPods-template-project-structure-objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9D85F7111775E7E7B9FC36 /* libPods-template-project-structure-objc.a */; };
-		D4655665E3A00884BF328E43 /* libPods-template-project-structure-objcTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E03E6181B833590B58414AF2 /* libPods-template-project-structure-objcTests.a */; };
+		9D6AAAD66A41A96E1B52F545 /* libPods-ObjectiveC-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45502B00FDB49C5B45A04475 /* libPods-ObjectiveC-Demo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,12 +26,13 @@
 			containerPortal = 1D319CFE2074A83D00F6F806 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1D319D052074A83D00F6F806;
-			remoteInfo = "template-project-structure-objc";
+			remoteInfo = "ObjectiveC-Demo";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D319D062074A83D00F6F806 /* template-project-structure-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "template-project-structure-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1378010FB18F65691A404432 /* Pods-ObjectiveC-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveC-Demo.debug.xcconfig"; path = "Target Support Files/Pods-ObjectiveC-Demo/Pods-ObjectiveC-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		1D319D062074A83D00F6F806 /* ObjectiveC-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ObjectiveC-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D319D092074A83D00F6F806 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D319D0A2074A83D00F6F806 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D319D0C2074A83D00F6F806 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -41,19 +42,18 @@
 		1D319D152074A83D00F6F806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D319D172074A83D00F6F806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D319D182074A83D00F6F806 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1D319D1E2074A83D00F6F806 /* template-project-structure-objcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "template-project-structure-objcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D319D222074A83D00F6F806 /* template_project_structure_objcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = template_project_structure_objcTests.m; sourceTree = "<group>"; };
+		1D319D1E2074A83D00F6F806 /* ObjectiveC-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ObjectiveC-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D319D222074A83D00F6F806 /* ObjectiveC-DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ObjectiveC-DemoTests.m"; sourceTree = "<group>"; };
 		1D319D242074A83D00F6F806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D319D382074AC8A00F6F806 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		1D319D402074AD8200F6F806 /* IntroViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		1D319D412074AD8200F6F806 /* IntroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 		1D319D432074ADBA00F6F806 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1DBE28A928DE178FF0A9A770 /* Pods-template-project-structure-objc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-template-project-structure-objc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-template-project-structure-objc/Pods-template-project-structure-objc.debug.xcconfig"; sourceTree = "<group>"; };
-		47237F016535C4D1E3E82157 /* Pods-template-project-structure-objc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-template-project-structure-objc.release.xcconfig"; path = "Pods/Target Support Files/Pods-template-project-structure-objc/Pods-template-project-structure-objc.release.xcconfig"; sourceTree = "<group>"; };
-		6CE1A687E2CEBBF6B9489E56 /* Pods-template-project-structure-objcTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-template-project-structure-objcTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-template-project-structure-objcTests/Pods-template-project-structure-objcTests.release.xcconfig"; sourceTree = "<group>"; };
-		89A29FF0AB302CDBCE6DDC7D /* Pods-template-project-structure-objcTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-template-project-structure-objcTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-template-project-structure-objcTests/Pods-template-project-structure-objcTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E03E6181B833590B58414AF2 /* libPods-template-project-structure-objcTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-template-project-structure-objcTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD9D85F7111775E7E7B9FC36 /* libPods-template-project-structure-objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-template-project-structure-objc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D869E79BDC58AB60F1EE492 /* libPods-ObjectiveC-DemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ObjectiveC-DemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		360C1C9EE6399A1FF9089513 /* Pods-ObjectiveC-DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveC-DemoTests.debug.xcconfig"; path = "Target Support Files/Pods-ObjectiveC-DemoTests/Pods-ObjectiveC-DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		45502B00FDB49C5B45A04475 /* libPods-ObjectiveC-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ObjectiveC-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F9CDB598C559372253085A9 /* Pods-ObjectiveC-DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveC-DemoTests.release.xcconfig"; path = "Target Support Files/Pods-ObjectiveC-DemoTests/Pods-ObjectiveC-DemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		F255A2683B45BABECDE541EF /* Pods-ObjectiveC-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveC-Demo.release.xcconfig"; path = "Target Support Files/Pods-ObjectiveC-Demo/Pods-ObjectiveC-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A7DA5F777CC2FE0BD8598A4 /* libPods-template-project-structure-objc.a in Frameworks */,
+				9D6AAAD66A41A96E1B52F545 /* libPods-ObjectiveC-Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,36 +69,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4655665E3A00884BF328E43 /* libPods-template-project-structure-objcTests.a in Frameworks */,
+				1152F93C69C6140F6C025D5A /* libPods-ObjectiveC-DemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1516E26A3FE104FBA8C1DFCC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1378010FB18F65691A404432 /* Pods-ObjectiveC-Demo.debug.xcconfig */,
+				F255A2683B45BABECDE541EF /* Pods-ObjectiveC-Demo.release.xcconfig */,
+				360C1C9EE6399A1FF9089513 /* Pods-ObjectiveC-DemoTests.debug.xcconfig */,
+				6F9CDB598C559372253085A9 /* Pods-ObjectiveC-DemoTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		1D319CFD2074A83D00F6F806 = {
 			isa = PBXGroup;
 			children = (
 				1D319D432074ADBA00F6F806 /* README.md */,
-				1D319D082074A83D00F6F806 /* template-project-structure-objc */,
-				1D319D212074A83D00F6F806 /* template-project-structure-objcTests */,
+				1D319D082074A83D00F6F806 /* ObjectiveC-Demo */,
+				1D319D212074A83D00F6F806 /* ObjectiveC-DemoTests */,
 				1D319D2F2074A95D00F6F806 /* Thirdpartys */,
 				1D319D072074A83D00F6F806 /* Products */,
-				CC389E4876D145CE91E6265E /* Pods */,
-				3EDB09B0430B84F345F44DC3 /* Frameworks */,
+				1516E26A3FE104FBA8C1DFCC /* Pods */,
+				EBF43C5EAC632A9E3048ED0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		1D319D072074A83D00F6F806 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D319D062074A83D00F6F806 /* template-project-structure-objc.app */,
-				1D319D1E2074A83D00F6F806 /* template-project-structure-objcTests.xctest */,
+				1D319D062074A83D00F6F806 /* ObjectiveC-Demo.app */,
+				1D319D1E2074A83D00F6F806 /* ObjectiveC-DemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D319D082074A83D00F6F806 /* template-project-structure-objc */ = {
+		1D319D082074A83D00F6F806 /* ObjectiveC-Demo */ = {
 			isa = PBXGroup;
 			children = (
 				1D319D332074A96B00F6F806 /* AppDelegate */,
@@ -107,16 +119,16 @@
 				1D319D3B2074AD4700F6F806 /* Modules */,
 				1D319D3C2074AD4C00F6F806 /* Scenes */,
 			);
-			path = "template-project-structure-objc";
+			path = "ObjectiveC-Demo";
 			sourceTree = "<group>";
 		};
-		1D319D212074A83D00F6F806 /* template-project-structure-objcTests */ = {
+		1D319D212074A83D00F6F806 /* ObjectiveC-DemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				1D319D222074A83D00F6F806 /* template_project_structure_objcTests.m */,
+				1D319D222074A83D00F6F806 /* ObjectiveC-DemoTests.m */,
 				1D319D242074A83D00F6F806 /* Info.plist */,
 			);
-			path = "template-project-structure-objcTests";
+			path = "ObjectiveC-DemoTests";
 			sourceTree = "<group>";
 		};
 		1D319D2F2074A95D00F6F806 /* Thirdpartys */ = {
@@ -253,68 +265,53 @@
 			path = Commons;
 			sourceTree = "<group>";
 		};
-		3EDB09B0430B84F345F44DC3 /* Frameworks */ = {
+		EBF43C5EAC632A9E3048ED0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FD9D85F7111775E7E7B9FC36 /* libPods-template-project-structure-objc.a */,
-				E03E6181B833590B58414AF2 /* libPods-template-project-structure-objcTests.a */,
+				45502B00FDB49C5B45A04475 /* libPods-ObjectiveC-Demo.a */,
+				1D869E79BDC58AB60F1EE492 /* libPods-ObjectiveC-DemoTests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CC389E4876D145CE91E6265E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1DBE28A928DE178FF0A9A770 /* Pods-template-project-structure-objc.debug.xcconfig */,
-				47237F016535C4D1E3E82157 /* Pods-template-project-structure-objc.release.xcconfig */,
-				89A29FF0AB302CDBCE6DDC7D /* Pods-template-project-structure-objcTests.debug.xcconfig */,
-				6CE1A687E2CEBBF6B9489E56 /* Pods-template-project-structure-objcTests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D319D052074A83D00F6F806 /* template-project-structure-objc */ = {
+		1D319D052074A83D00F6F806 /* ObjectiveC-Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D319D272074A83D00F6F806 /* Build configuration list for PBXNativeTarget "template-project-structure-objc" */;
+			buildConfigurationList = 1D319D272074A83D00F6F806 /* Build configuration list for PBXNativeTarget "ObjectiveC-Demo" */;
 			buildPhases = (
-				8FCDF2C9B5148906934028FC /* [CP] Check Pods Manifest.lock */,
+				A7881B8691C993E80ADF73AC /* [CP] Check Pods Manifest.lock */,
 				1D319D022074A83D00F6F806 /* Sources */,
 				1D319D032074A83D00F6F806 /* Frameworks */,
 				1D319D042074A83D00F6F806 /* Resources */,
-				2AA2A424342A8B89485A609B /* [CP] Embed Pods Frameworks */,
-				C654E08E3EEFC87ED618CBE6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "template-project-structure-objc";
-			productName = "template-project-structure-objc";
-			productReference = 1D319D062074A83D00F6F806 /* template-project-structure-objc.app */;
+			name = "ObjectiveC-Demo";
+			productName = "ObjectiveC-Demo";
+			productReference = 1D319D062074A83D00F6F806 /* ObjectiveC-Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1D319D1D2074A83D00F6F806 /* template-project-structure-objcTests */ = {
+		1D319D1D2074A83D00F6F806 /* ObjectiveC-DemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D319D2A2074A83D00F6F806 /* Build configuration list for PBXNativeTarget "template-project-structure-objcTests" */;
+			buildConfigurationList = 1D319D2A2074A83D00F6F806 /* Build configuration list for PBXNativeTarget "ObjectiveC-DemoTests" */;
 			buildPhases = (
-				929FC9065E57D9B2AFE5F6AC /* [CP] Check Pods Manifest.lock */,
+				13B5F63695610A714B77D07D /* [CP] Check Pods Manifest.lock */,
 				1D319D1A2074A83D00F6F806 /* Sources */,
 				1D319D1B2074A83D00F6F806 /* Frameworks */,
 				1D319D1C2074A83D00F6F806 /* Resources */,
-				F2B44A02C827656A224831FB /* [CP] Embed Pods Frameworks */,
-				CD41C4887634544777DFFD92 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				1D319D202074A83D00F6F806 /* PBXTargetDependency */,
 			);
-			name = "template-project-structure-objcTests";
-			productName = "template-project-structure-objcTests";
-			productReference = 1D319D1E2074A83D00F6F806 /* template-project-structure-objcTests.xctest */;
+			name = "ObjectiveC-DemoTests";
+			productName = "ObjectiveC-DemoTests";
+			productReference = 1D319D1E2074A83D00F6F806 /* ObjectiveC-DemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -337,7 +334,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1D319D012074A83D00F6F806 /* Build configuration list for PBXProject "template-project-structure-objc" */;
+			buildConfigurationList = 1D319D012074A83D00F6F806 /* Build configuration list for PBXProject "ObjectiveC-Demo" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -350,8 +347,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D319D052074A83D00F6F806 /* template-project-structure-objc */,
-				1D319D1D2074A83D00F6F806 /* template-project-structure-objcTests */,
+				1D319D052074A83D00F6F806 /* ObjectiveC-Demo */,
+				1D319D1D2074A83D00F6F806 /* ObjectiveC-DemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -378,100 +375,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2AA2A424342A8B89485A609B /* [CP] Embed Pods Frameworks */ = {
+		13B5F63695610A714B77D07D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-template-project-structure-objc/Pods-template-project-structure-objc-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8FCDF2C9B5148906934028FC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-template-project-structure-objc-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ObjectiveC-DemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		929FC9065E57D9B2AFE5F6AC /* [CP] Check Pods Manifest.lock */ = {
+		A7881B8691C993E80ADF73AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-template-project-structure-objcTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ObjectiveC-Demo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C654E08E3EEFC87ED618CBE6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-template-project-structure-objc/Pods-template-project-structure-objc-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CD41C4887634544777DFFD92 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-template-project-structure-objcTests/Pods-template-project-structure-objcTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F2B44A02C827656A224831FB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-template-project-structure-objcTests/Pods-template-project-structure-objcTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -492,7 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D319D232074A83D00F6F806 /* template_project_structure_objcTests.m in Sources */,
+				1D319D232074A83D00F6F806 /* ObjectiveC-DemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +446,7 @@
 /* Begin PBXTargetDependency section */
 		1D319D202074A83D00F6F806 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1D319D052074A83D00F6F806 /* template-project-structure-objc */;
+			target = 1D319D052074A83D00F6F806 /* ObjectiveC-Demo */;
 			targetProxy = 1D319D1F2074A83D00F6F806 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -632,14 +577,14 @@
 		};
 		1D319D282074A83D00F6F806 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DBE28A928DE178FF0A9A770 /* Pods-template-project-structure-objc.debug.xcconfig */;
+			baseConfigurationReference = 1378010FB18F65691A404432 /* Pods-ObjectiveC-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/template-project-structure-objc/AppDelegate/Supporting Files/Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/template-project-structure-objc/AppDelegate/Supporting Files/Info.plist";
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/ObjectiveC-Demo/AppDelegate/Supporting Files/Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/ObjectiveC-Demo/AppDelegate/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.template-project-structure-objc";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.ObjectiveC-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -647,14 +592,14 @@
 		};
 		1D319D292074A83D00F6F806 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47237F016535C4D1E3E82157 /* Pods-template-project-structure-objc.release.xcconfig */;
+			baseConfigurationReference = F255A2683B45BABECDE541EF /* Pods-ObjectiveC-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/template-project-structure-objc/AppDelegate/Supporting Files/Prefix.pch";
-				INFOPLIST_FILE = "$(SRCROOT)/template-project-structure-objc/AppDelegate/Supporting Files/Info.plist";
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/ObjectiveC-Demo/AppDelegate/Supporting Files/Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/ObjectiveC-Demo/AppDelegate/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.template-project-structure-objc";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.ObjectiveC-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -662,38 +607,38 @@
 		};
 		1D319D2B2074A83D00F6F806 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89A29FF0AB302CDBCE6DDC7D /* Pods-template-project-structure-objcTests.debug.xcconfig */;
+			baseConfigurationReference = 360C1C9EE6399A1FF9089513 /* Pods-ObjectiveC-DemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "template-project-structure-objcTests/Info.plist";
+				INFOPLIST_FILE = "ObjectiveC-DemoTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.template-project-structure-objcTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.ObjectiveC-DemoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/template-project-structure-objc.app/template-project-structure-objc";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ObjectiveC-Demo.app/ObjectiveC-Demo";
 			};
 			name = Debug;
 		};
 		1D319D2C2074A83D00F6F806 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CE1A687E2CEBBF6B9489E56 /* Pods-template-project-structure-objcTests.release.xcconfig */;
+			baseConfigurationReference = 6F9CDB598C559372253085A9 /* Pods-ObjectiveC-DemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "template-project-structure-objcTests/Info.plist";
+				INFOPLIST_FILE = "ObjectiveC-DemoTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.template-project-structure-objcTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.ObjectiveC-DemoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/template-project-structure-objc.app/template-project-structure-objc";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ObjectiveC-Demo.app/ObjectiveC-Demo";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D319D012074A83D00F6F806 /* Build configuration list for PBXProject "template-project-structure-objc" */ = {
+		1D319D012074A83D00F6F806 /* Build configuration list for PBXProject "ObjectiveC-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D319D252074A83D00F6F806 /* Debug */,
@@ -702,7 +647,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D319D272074A83D00F6F806 /* Build configuration list for PBXNativeTarget "template-project-structure-objc" */ = {
+		1D319D272074A83D00F6F806 /* Build configuration list for PBXNativeTarget "ObjectiveC-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D319D282074A83D00F6F806 /* Debug */,
@@ -711,7 +656,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D319D2A2074A83D00F6F806 /* Build configuration list for PBXNativeTarget "template-project-structure-objcTests" */ = {
+		1D319D2A2074A83D00F6F806 /* Build configuration list for PBXNativeTarget "ObjectiveC-DemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D319D2B2074A83D00F6F806 /* Debug */,
