@@ -10,4 +10,10 @@
 
 @interface IntroViewController : UIViewController
 
+- (void) localMessage: (char[])message;
+
+- (int) localMessage: (char[])message _:(BOOL)isPrintable _:(int)messageId;
+
++ (void) combineMessages: (NSString *)message;
+
 @end

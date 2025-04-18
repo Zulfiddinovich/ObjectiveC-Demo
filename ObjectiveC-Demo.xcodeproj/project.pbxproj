@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,6 +56,10 @@
 		F255A2683B45BABECDE541EF /* Pods-ObjectiveC-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjectiveC-Demo.release.xcconfig"; path = "Target Support Files/Pods-ObjectiveC-Demo/Pods-ObjectiveC-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		ACF2AECE2DB255FA00717920 /* Classes */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Classes; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		1D319D032074A83D00F6F806 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -84,7 +88,6 @@
 				360C1C9EE6399A1FF9089513 /* Pods-ObjectiveC-DemoTests.debug.xcconfig */,
 				6F9CDB598C559372253085A9 /* Pods-ObjectiveC-DemoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,6 +211,7 @@
 		1D319D392074ACA600F6F806 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ACF2AECE2DB255FA00717920 /* Classes */,
 				1D319D122074A83D00F6F806 /* Assets.xcassets */,
 				1D319D3A2074AD3800F6F806 /* Storyboards */,
 			);
@@ -289,6 +293,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				ACF2AECE2DB255FA00717920 /* Classes */,
 			);
 			name = "ObjectiveC-Demo";
 			productName = "ObjectiveC-Demo";
@@ -583,7 +590,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/ObjectiveC-Demo/AppDelegate/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ObjectiveC-Demo/AppDelegate/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.ObjectiveC-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -598,7 +608,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/ObjectiveC-Demo/AppDelegate/Supporting Files/Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ObjectiveC-Demo/AppDelegate/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.ObjectiveC-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -612,7 +625,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "ObjectiveC-DemoTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.ObjectiveC-DemoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -627,7 +644,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "ObjectiveC-DemoTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kangc.ObjectiveC-DemoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
