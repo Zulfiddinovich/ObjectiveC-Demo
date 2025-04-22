@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <UserNotifications/UserNotifications.h>
+#import <WatchConnectivity/WatchConnectivity.h>
 
 @interface AppDelegate ()
 
@@ -15,8 +17,13 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // Call for notification category registery
+    [self registerNotificationCategories];
+    
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    center.delegate = self; // Set the delegate
     return YES;
 }
 
@@ -47,5 +54,82 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - UNUserNotificationCenterDelegate
+
+// This method is called when the user interacts with a notification action.
+- (void)userNotificationCenter: (UNUserNotificationCenter *)center
+                                didReceiveResponse:(UNNotificationResponse *)response
+                                withCompletionHandler:(void (^)(void))completionHandler {
+    
+    NSString *actionIdentifier = response.actionIdentifier;
+    NSString *notificationIdentifier = response.notification.request.identifier; // You might need this
+
+    if ([actionIdentifier isEqualToString:@"YES_ACTION"]) {
+        NSLog(@"User tapped 'Yes' on notification: %@", notificationIdentifier);
+        // Here you would typically perform the action associated with "Yes"
+        // For example, update data, trigger an event, etc.
+        [self sendResponseToWatch:@"Yes" forNotification:notificationIdentifier];
+    } else if ([actionIdentifier isEqualToString:@"NO_ACTION"]) {
+        NSLog(@"User tapped 'No' on notification: %@", notificationIdentifier);
+        // Handle the "No" action
+        [self sendResponseToWatch:@"No" forNotification:notificationIdentifier];
+    }
+
+    // You must call the completion handler when you're done handling the response.
+    completionHandler();
+}
+
+// This method is called when the app is in the foreground and a notification arrives.
+// You can customize how the notification is presented.
+- (void)userNotificationCenter: (UNUserNotificationCenter *)center
+                                willPresentNotification:(UNNotification *)notification
+                                withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
+    
+    // Customize presentation options if needed (e.g., show alert, sound, badge even if in foreground)
+    completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionBadge);
+}
+
+- (void)registerNotificationCategories {
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+
+    // Define the "Yes" action
+    UNNotificationAction *yesAction = [UNNotificationAction actionWithIdentifier:@"YES_ACTION"
+                                                                            title:@"Yes"
+                                                                          options:UNNotificationActionOptionForeground]; // Bring app to foreground if tapped
+
+    // Define the "No" action
+    UNNotificationAction *noAction = [UNNotificationAction actionWithIdentifier:@"NO_ACTION"
+                                                                           title:@"No"
+                                                                         options:UNNotificationActionOptionDestructive]; // Indicate a destructive action
+
+    // Create the notification category with the actions
+    UNNotificationCategory *responseCategory = [UNNotificationCategory categoryWithIdentifier:@"RESPONSE_CATEGORY"
+                                                                                      actions:@[yesAction, noAction]
+                                                                            intentIdentifiers:@[]
+                                                                                      options:UNNotificationCategoryOptionCustomDismissAction];
+
+    // Register the category with the notification center
+    [center setNotificationCategories:[NSSet setWithObject:responseCategory]];
+}
+
+- (void)sendResponseToWatch:(NSString *)response
+                            forNotification:(NSString *)identifier {
+    
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        if (session.isPaired && session.isWatchAppInstalled) {
+            NSDictionary *payload = @{@"notificationResponse": response, @"notificationIdentifier": identifier};
+            [session sendMessage:payload
+                   replyHandler:nil // Optional: Handle a reply from the watch app
+                  errorHandler:^(NSError *error) {
+                      NSLog(@"Error sending message to watch: %@", error);
+                  }];
+        } else {
+            NSLog(@"Watch session is not active or watch app is not installed.");
+        }
+    } else {
+        NSLog(@"Watch Connectivity is not supported on this device.");
+    }
+}
 
 @end
