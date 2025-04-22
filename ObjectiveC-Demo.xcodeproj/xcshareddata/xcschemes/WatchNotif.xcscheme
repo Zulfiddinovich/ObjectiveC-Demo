@@ -74,12 +74,21 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+            BlueprintIdentifier = "ACF2AEF12DB2653500717920"
+            BuildableName = "WatchNotif.appex"
+            BlueprintName = "WatchNotif"
+            ReferencedContainer = "container:ObjectiveC-Demo.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
             BlueprintIdentifier = "ACF2AEDB2DB2643200717920"
             BuildableName = "WatchDemo Watch App.app"
             BlueprintName = "WatchDemo Watch App"
             ReferencedContainer = "container:ObjectiveC-Demo.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
