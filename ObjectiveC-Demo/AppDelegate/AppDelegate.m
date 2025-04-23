@@ -19,6 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSLog(@"TAG, AppDelegate:application(), registered and started notification center!");
     // Call for notification category registery
     [self registerNotificationCategories];
     
@@ -60,6 +61,7 @@
 - (void)userNotificationCenter: (UNUserNotificationCenter *)center
                                 didReceiveResponse:(UNNotificationResponse *)response
                                 withCompletionHandler:(void (^)(void))completionHandler {
+    NSLog(@"TAG, AppDelegate:userNotificationCenter(), should be called after user interacts with notification!");
     
     NSString *actionIdentifier = response.actionIdentifier;
     NSString *notificationIdentifier = response.notification.request.identifier; // You might need this
@@ -84,12 +86,15 @@
 - (void)userNotificationCenter: (UNUserNotificationCenter *)center
                                 willPresentNotification:(UNNotification *)notification
                                 withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
+    NSLog(@"TAG, AppDelegate:userNotificationCenter(), should be called when app is in foreground and notification arrives!");
     
     // Customize presentation options if needed (e.g., show alert, sound, badge even if in foreground)
     completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionBadge);
 }
 
 - (void)registerNotificationCategories {
+    NSLog(@"TAG, AppDelegate:registerNotificationCategories(), called by AppDelegate:application()!");
+    
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
 
     // Define the "Yes" action
@@ -114,6 +119,7 @@
 
 - (void)sendResponseToWatch:(NSString *)response
                             forNotification:(NSString *)identifier {
+    NSLog(@"TAG, AppDelegate:sendResponseToWatch(), response: @%@", response);
     
     if ([WCSession isSupported]) {
         WCSession *session = [WCSession defaultSession];

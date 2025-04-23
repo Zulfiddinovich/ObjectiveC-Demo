@@ -21,6 +21,8 @@
 
 - (void)didReceiveNotificationRequest:  (UNNotificationRequest *)request
                                         withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
+    NSLog(@"TAG, NotificationService:didReceiveNotificationRequest(), response: @%@", request.identifier);
+
     self.contentHandler = contentHandler;
     self.bestAttemptContent = [request.content mutableCopy];
     
@@ -31,6 +33,7 @@
 }
 
 - (void)serviceExtensionTimeWillExpire {
+    NSLog(@"TAG, NotificationService:serviceExtensionTimeWillExpire(), ");
     // Called just before the extension will be terminated by the system.
     // Use this as an opportunity to deliver your "best attempt" at modified content, otherwise the original push payload will be used.
     self.contentHandler(self.bestAttemptContent);
@@ -40,6 +43,8 @@
                                         body:(NSString *)body
                                         after:(NSTimeInterval)timeInterval
                                         identifier:(NSString *)identifier {
+    
+    NSLog(@"TAG, NotificationService:scheduleNotificationWithTitle(), ");
 
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
 
@@ -77,14 +82,17 @@
 }
 
 - (instancetype)init {
+    NSLog(@"TAG, NotificationService:init(), ");
     self = [super init];
     if (self) {
         if ([WCSession isSupported]) {
+            NSLog(@"TAG, NotificationService:init(), isSupported: --true-- ");
             WCSession *session = [WCSession defaultSession];
             session.delegate = self;
             [session activateSession];
         } else {
-            NSLog(@"Watch Connectivity is not supported on this device.");
+            NSLog(@"TAG, NotificationService:init(), isSupported: --false-- ");
+//            NSLog(@"Watch Connectivity is not supported on this device.");
         }
     }
     return self;
@@ -95,6 +103,8 @@
 - (void)session: (WCSession *)session
                  activationDidCompleteWithState:(WCSessionActivationState)activationState
                  error:(NSError *)error {
+    NSLog(@"TAG, NotificationService:session(), with 'activationDidCompleteWithState'");
+    
     if (error) {
         NSLog(@"WC Session activation failed with error: %@", error.localizedDescription);
         return;
@@ -104,19 +114,23 @@
 
 #if TARGET_OS_IOS
 - (void)sessionDidBecomeInactive:(WCSession *)session {
-    NSLog(@"WC Session did become inactive");
+    NSLog(@"TAG, NotificationService:sessionDidBecomeInactive(), ");
+//    NSLog(@"WC Session did become inactive");
 }
 
 - (void)sessionDidDeactivate:(WCSession *)session {
+    
+    NSLog(@"TAG, NotificationService:sessionDidDeactivate(), ");
     // Reactivate session
     [[WCSession defaultSession] activateSession];
-    NSLog(@"WC Session did deactivate");
+//    NSLog(@"WC Session did deactivate");
 }
 #endif
 
 - (void)session: (WCSession *)session
                  didReceiveMessage:(NSDictionary<NSString *, id> *)message
                  replyHandler:(void (^)(NSDictionary<NSString *, id> * _Nonnull))replyHandler {
+    NSLog(@"TAG, NotificationService:sessionDidDeactivate(), with 'didReceiveMessage'");
     
     NSString *response = message[@"notificationResponse"];
     NSString *identifier = message[@"notificationIdentifier"];
