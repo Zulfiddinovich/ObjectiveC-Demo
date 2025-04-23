@@ -16,9 +16,25 @@
 
 @implementation AppDelegate
 
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    
+    // Set up WatchConnectivity
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+        NSLog(@"iOS: WatchConnectivity session activated");
+        
+        // Check if watch is reachable
+        if (session.isReachable) {
+            NSLog(@"iOS: Watch is reachable");
+            [self sendInitialContextToWatch];
+        } else {
+            NSLog(@"iOS: Watch is not reachable");
+        }
+    }
+    
     NSLog(@"TAG, AppDelegate:application(), registered and started notification center!");
     // Call for notification category registery
     [self registerNotificationCategories];
@@ -28,6 +44,76 @@
     return YES;
 }
 
+- (void)sendInitialContextToWatch {
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        if (session.isReachable) {
+            NSDictionary *context = @{@"initialData": @"Hello from iOS"};
+            NSError *error;
+            [session updateApplicationContext:context error:&error];
+            if (error) {
+                NSLog(@"Error sending initial context to watch: %@", error);
+            } else {
+                NSLog(@"Successfully sent initial context to watch");
+            }
+        } else {
+            NSLog(@"Cannot send context - watch is not reachable");
+        }
+    }
+}
+
+#pragma mark - WCSessionDelegate Methods
+
+- (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error {
+    if (error) {
+        NSLog(@"iOS: WC Session activation failed with error: %@", error.localizedDescription);
+        return;
+    }
+    NSLog(@"iOS: WC Session activated with state: %ld", (long)activationState);
+    
+    // Check if watch is reachable
+    if (session.isReachable) {
+        NSLog(@"iOS: Watch is reachable");
+        [self sendInitialContextToWatch];
+    } else {
+        NSLog(@"iOS: Watch is not reachable");
+    }
+}
+
+- (void)sessionReachabilityDidChange:(WCSession *)session {
+    NSLog(@"iOS: Watch reachability changed: %@", session.isReachable ? @"Reachable" : @"Not Reachable");
+    if (session.isReachable) {
+        [self sendInitialContextToWatch];
+    }
+}
+
+- (void)sessionDidBecomeInactive:(WCSession *)session {
+    NSLog(@"iOS: WC Session did become inactive");
+}
+
+- (void)sessionDidDeactivate:(WCSession *)session {
+    NSLog(@"iOS: WC Session did deactivate");
+    // Reactivate session
+    [[WCSession defaultSession] activateSession];
+}
+
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message replyHandler:(void(^)(NSDictionary<NSString *, id> *replyMessage))replyHandler {
+    NSLog(@"iOS: Received message from watch: %@", message);
+    
+    NSString *response = message[@"notificationResponse"];
+    NSString *identifier = message[@"notificationIdentifier"];
+    
+    if (response && identifier) {
+        NSLog(@"iOS: Received notification response '%@' for notification: %@", response, identifier);
+        // Handle the notification response here
+        // For example, update your app's UI or data based on the user's choice
+        
+        // Send a reply back to the watch
+        if (replyHandler) {
+            replyHandler(@{@"iosResponse": @"Received notification response!"});
+        }
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

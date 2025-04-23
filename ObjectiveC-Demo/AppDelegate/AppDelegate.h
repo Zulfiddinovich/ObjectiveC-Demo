@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <UserNotifications/UserNotifications.h> // Make sure this is imported
+#import <WatchConnectivity/WatchConnectivity.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate, WCSessionDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

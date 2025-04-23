@@ -7,8 +7,9 @@
 //
 
 #import <UserNotifications/UserNotifications.h>
+#import <Foundation/Foundation.h>
 
-@interface NotificationService : UNNotificationServiceExtension
+@interface NotificationService : UNNotificationServiceExtension <UNUserNotificationCenterDelegate>
 
 + (void)scheduleNotificationWithTitle:  (NSString *)title
                                         body:(NSString *)body

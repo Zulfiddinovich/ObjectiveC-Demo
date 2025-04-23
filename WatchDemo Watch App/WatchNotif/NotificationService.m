@@ -85,14 +85,44 @@
     NSLog(@"TAG, NotificationService:init(), ");
     self = [super init];
     if (self) {
+        // Set up notification categories and actions
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;  // Set the delegate
+        
+        // Create the actions - matching iOS app identifiers
+        UNNotificationAction *yesAction = [UNNotificationAction actionWithIdentifier:@"YES_ACTION"
+                                                                            title:@"Yes"
+                                                                          options:UNNotificationActionOptionForeground];
+        
+        UNNotificationAction *noAction = [UNNotificationAction actionWithIdentifier:@"NO_ACTION"
+                                                                            title:@"No"
+                                                                          options:UNNotificationActionOptionDestructive];
+        
+        // Create the category with the actions
+        UNNotificationCategory *category = [UNNotificationCategory categoryWithIdentifier:@"RESPONSE_CATEGORY"
+                                                                              actions:@[yesAction, noAction]
+                                                                    intentIdentifiers:@[]
+                                                                              options:UNNotificationCategoryOptionCustomDismissAction];
+        
+        // Register the category
+        [center setNotificationCategories:[NSSet setWithObject:category]];
+        
+        // Set up WatchConnectivity
         if ([WCSession isSupported]) {
-            NSLog(@"TAG, NotificationService:init(), isSupported: --true-- ");
+            NSLog(@"Watch: WatchConnectivity is supported");
             WCSession *session = [WCSession defaultSession];
             session.delegate = self;
             [session activateSession];
+            NSLog(@"Watch: WatchConnectivity session activated");
+            
+            // Check if iPhone is reachable
+            if (session.isReachable) {
+                NSLog(@"Watch: iPhone is reachable");
+            } else {
+                NSLog(@"Watch: iPhone is not reachable");
+            }
         } else {
-            NSLog(@"TAG, NotificationService:init(), isSupported: --false-- ");
-//            NSLog(@"Watch Connectivity is not supported on this device.");
+            NSLog(@"Watch: WatchConnectivity is not supported");
         }
     }
     return self;
@@ -100,16 +130,23 @@
 
 #pragma mark - WCSessionDelegate Methods
 
-- (void)session: (WCSession *)session
-                 activationDidCompleteWithState:(WCSessionActivationState)activationState
-                 error:(NSError *)error {
-    NSLog(@"TAG, NotificationService:session(), with 'activationDidCompleteWithState'");
-    
+- (void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error {
     if (error) {
-        NSLog(@"WC Session activation failed with error: %@", error.localizedDescription);
+        NSLog(@"Watch: WC Session activation failed with error: %@", error.localizedDescription);
         return;
     }
-    NSLog(@"WC Session activated with state: %ld", (long)activationState);
+    NSLog(@"Watch: WC Session activated with state: %ld", (long)activationState);
+    
+    // Check if iPhone is reachable
+    if (session.isReachable) {
+        NSLog(@"Watch: iPhone is reachable");
+    } else {
+        NSLog(@"Watch: iPhone is not reachable");
+    }
+}
+
+- (void)sessionReachabilityDidChange:(WCSession *)session {
+    NSLog(@"Watch: iPhone reachability changed: %@", session.isReachable ? @"Reachable" : @"Not Reachable");
 }
 
 #if TARGET_OS_IOS
@@ -127,24 +164,71 @@
 }
 #endif
 
-- (void)session: (WCSession *)session
-                 didReceiveMessage:(NSDictionary<NSString *, id> *)message
-                 replyHandler:(void (^)(NSDictionary<NSString *, id> * _Nonnull))replyHandler {
-    NSLog(@"TAG, NotificationService:sessionDidDeactivate(), with 'didReceiveMessage'");
+- (void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *, id> *)message replyHandler:(void(^)(NSDictionary<NSString *, id> *replyMessage))replyHandler {
+    NSLog(@"Watch: Received message from iOS: %@", message);
     
-    NSString *response = message[@"notificationResponse"];
-    NSString *identifier = message[@"notificationIdentifier"];
+    NSString *iosResponse = message[@"iosResponse"];
+    if (iosResponse) {
+        NSLog(@"Watch: Received iOS response: %@", iosResponse);
+        // Handle the iOS response here if needed
+    }
+    
+    if (replyHandler) {
+        replyHandler(@{@"watchResponse": @"Received iOS message!"});
+    }
+}
 
-    if (response && identifier) {
-        NSLog(@"Received response '%@' for notification: %@ on the watch.", response, identifier);
-        // Handle the received response on your watch app
-        // For example, update your watch app's UI or data based on the user's choice.
+- (void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *, id> *)applicationContext {
+    NSLog(@"Watch: Received application context: %@", applicationContext);
+}
 
-        // Optionally send a reply back to the iOS app
-        if (replyHandler) {
-            replyHandler(@{@"watchResponse": @"Received!"});
+#pragma mark - UNUserNotificationCenterDelegate Methods
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center 
+        willPresentNotification:(UNNotification *)notification 
+        withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
+    NSLog(@"TAG, NotificationService:userNotificationCenter(), with 'willPresentNotification'");
+    // Show the notification even when the app is in foreground
+    completionHandler(UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionSound);
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center 
+        didReceiveNotificationResponse:(UNNotificationResponse *)response 
+        withCompletionHandler:(void(^)(void))completionHandler {
+    NSLog(@"TAG, NotificationService:userNotificationCenter(), with 'didReceiveNotificationResponse'");
+    
+    NSString *actionIdentifier = response.actionIdentifier;
+    NSString *notificationIdentifier = response.notification.request.identifier;
+    
+    if ([actionIdentifier isEqualToString:@"YES_ACTION"]) {
+        NSLog(@"User tapped YES for notification: %@", notificationIdentifier);
+        // Send message to iOS app
+        if ([WCSession defaultSession].isReachable) {
+            [[WCSession defaultSession] sendMessage:@{
+                @"notificationResponse": @"YES",
+                @"notificationIdentifier": notificationIdentifier
+            } replyHandler:^(NSDictionary<NSString *,id> *replyMessage) {
+                NSLog(@"Message sent to iOS app with reply: %@", replyMessage);
+            } errorHandler:^(NSError *error) {
+                NSLog(@"Error sending message to iOS app: %@", error);
+            }];
+        }
+    } else if ([actionIdentifier isEqualToString:@"NO_ACTION"]) {
+        NSLog(@"User tapped NO for notification: %@", notificationIdentifier);
+        // Send message to iOS app
+        if ([WCSession defaultSession].isReachable) {
+            [[WCSession defaultSession] sendMessage:@{
+                @"notificationResponse": @"NO",
+                @"notificationIdentifier": notificationIdentifier
+            } replyHandler:^(NSDictionary<NSString *,id> *replyMessage) {
+                NSLog(@"Message sent to iOS app with reply: %@", replyMessage);
+            } errorHandler:^(NSError *error) {
+                NSLog(@"Error sending message to iOS app: %@", error);
+            }];
         }
     }
+    
+    completionHandler();
 }
 
 @end
